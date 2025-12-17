@@ -2,7 +2,7 @@
 
 # Apple Commerce Shop Clone (Issue-driven Workflow)
 
-> 이 프로젝트는 UI 클론보다 **GitHub 이슈 기반 개발(브랜치 전략 · PR · 커밋 컨벤션)**를 실습/문서화하는 것이 목표입니다.
+이 프로젝트는 UI 클론보다 **GitHub 이슈 기반 개발(브랜치 전략 · PR · 커밋 컨벤션)**를 실습/문서화하는 것이 목표입니다.
 
 - Demo: 준비중
 - Images/Guideline: 사이트 가이드라인 리소스를 사용 예정
@@ -15,7 +15,6 @@
 > 작업 시작 후 `docs/images/`에 이미지 추가 예정
 
 - `docs/images/preview.png`
-- `docs/images/guideline-*.png`
 
 ---
 
@@ -32,7 +31,7 @@
 
 ### Requirements
 
-- Node.js: LTS 권장
+- Node.js
 - npm
 
 ### Install & Run
@@ -63,7 +62,7 @@ reactCloneWeb/
 
 ## Branch Strategy
 
-- `main`: production (항상 안정)
+- `main`: production
 - `dev`: integration
 - work branches:
   - `feat/#12-header`
