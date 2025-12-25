@@ -1,14 +1,14 @@
 /** @format */
 
-import { Routes, Route } from "react-router-dom";
-import HomePage from "../pages/Home/index.tsx";
-import ProductDetailPage from "../pages/Products/ProductDetailPage";
-import NotFound from "../pages/NotFound/index.tsx";
-import ProductListPage from "../pages/Products/ProductListPage.tsx";
-import RootLayout from "../components/layout/RootLayout.tsx";
-import { useState } from "react";
-import "./App.css";
-import "../styles/globals.css";
+import { Routes, Route } from 'react-router-dom';
+import HomePage from '../pages/Home/index.tsx';
+import ProductDetailPage from '../pages/Products/ProductDetailPage';
+import ProductListPage from '../pages/Products/ProductListPage.tsx';
+import RootLayout from '../components/layout/RootLayout.tsx';
+import { useState } from 'react';
+import './App.css';
+import '../styles/globals.css';
+import NotFoundPage from '../pages/NotFound/index.tsx';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -20,14 +20,14 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
       </div>
 
-      <div className="bg-red-500 text-white p-6 text-2xl font-bold">TEST</div>
+      <div className="bg-red-500 p-6 text-2xl font-bold text-white">TEST</div>
 
       <Routes>
         <Route element={<RootLayout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/products" element={<ProductListPage />} />
           <Route path="/products/:productId" element={<ProductDetailPage />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </>

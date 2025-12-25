@@ -1,18 +1,17 @@
 /** @format */
 
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from 'react-router-dom';
+import Header from './Header';
+import Footer from './Footer';
 
 function RootLayout() {
   return (
-    <div style={{ padding: 16 }}>
-      <header style={{ display: "flex", gap: 12, marginBottom: 16 }}>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/products">Products</NavLink>
-      </header>
-
-      <main>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <Header />
+      <main style={{ maxWidth: 960, margin: '0 auto', padding: '16px', flex: 1 }}>
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 }
