@@ -25,7 +25,6 @@ function Footer() {
 
   return (
     <h1>
-      {' '}
       <footer className="bg-black">
         <div className="mx-auto w-full max-w-[1440px] px-6 py-24 md:px-40">
           <div className="flex flex-col gap-16 md:flex-row md:justify-between">
