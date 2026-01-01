@@ -1,6 +1,6 @@
 /** @format */
 
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @layer base {
   *,
@@ -17,8 +17,20 @@
 
   body {
     margin: 0;
-  }
+    font-family:
+      'Noto Sans KR',
+      system-ui,
+      -apple-system,
+      'Segoe UI',
+      Roboto,
+      'Helvetica Neue',
+      Arial,
+      'Apple SD Gothic Neo',
+      'Malgun Gothic',
+      sans-serif;
 
+    @apply bg-white text-gray-900;
+  }
   img,
   video,
   svg,
