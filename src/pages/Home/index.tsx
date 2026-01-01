@@ -1,8 +1,8 @@
 /** @format */
 
 import { Link } from 'react-router-dom';
-import { items } from '../../data/items';
-import ProductCard from '../../components/product/productCard';
+import { items } from '@/data/items';
+import ProductCard from '@/components/product/productCard';
 
 function HomePage() {
   const featured = items.slice(0, 4);
