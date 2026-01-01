@@ -7,7 +7,7 @@ function Header() {
   return (
     <header className="h-[88px] border-b border-black/10">
       <div className="mx-auto h-full max-w-[1440px] px-[160px] py-[16px]">
-        <div className="grid h-full grid-cols-[auto_372px_1fr_auto] items-center gap-[40px]">
+        <div className="grid h-full grid-cols-[auto_372px_auto_auto] items-center gap-x-[32px]">
           {/* 로고 */}
           <a href="/" className="flex items-center">
             <img src={logo} alt="cyber" className="h-[24px] w-auto" />
@@ -28,20 +28,20 @@ function Header() {
           </div>
 
           {/* 투명 네비 (공간은 차지, 화면엔 안 보임) */}
-          <nav className="invisible">
-            <ul className="flex items-center justify-center gap-[32px] text-[14px]">
-              <li>New</li>
-              <li>Best</li>
-              <li>Sale</li>
+          <nav className="visible">
+            <ul className="flex w-[283px] items-center justify-center gap-[52px] text-[14px]">
+              <li>Home</li>
+              <li>About</li>
+              <li>Contant Us</li>
             </ul>
           </nav>
 
           {/* 아이콘 */}
           <div className="flex items-center gap-[24px]">
-            <button type="button" className="h-[28px] w-[28px]">
+            <button type="button" className="h-[32px] w-[32px]">
               <img src={iconHeart} alt="wishlist" className="h-full w-full" />
             </button>
-            <button type="button" className="h-[28px] w-[28px]">
+            <button type="button" className="h-[32px] w-[32px]">
               <img src={iconCart} alt="cart" className="h-full w-full" />
             </button>
           </div>
