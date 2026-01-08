@@ -2,6 +2,7 @@ import logo from '@/assets/images/common/logo.svg';
 import iconHeart from '@/assets/icons/Favorites.svg';
 import iconCart from '@/assets/icons/Cart.png';
 import iconSearch from '@/assets/icons/search.png';
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
@@ -30,7 +31,9 @@ function Header() {
           {/* 투명 네비 (공간은 차지, 화면엔 안 보임) */}
           <nav className="visible">
             <ul className="flex w-[283px] items-center justify-center gap-[52px] text-[14px]">
-              <li>Home</li>
+              <li>
+                <Link to="/products">STORE</Link>
+              </li>
               <li>About</li>
               <li>Contant Us</li>
             </ul>
