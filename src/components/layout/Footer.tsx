@@ -13,7 +13,6 @@ function Footer() {
     'Non-cash account',
     'Payment',
   ];
-
   const buyerHelp = [
     'Find an order',
     'Terms of delivery',
@@ -22,7 +21,12 @@ function Footer() {
     'Frequently asked questions',
     'Terms of use of the site',
   ];
-
+  const socials = [
+    { icon: iconTwitter, alt: 'twitter' },
+    { icon: iconFacebook, alt: 'facebook' },
+    { icon: iconTiktok, alt: 'tiktok' },
+    { icon: iconInstagram, alt: 'instagram' },
+  ];
   return (
     <h1>
       <footer className="bg-black">
@@ -37,11 +41,10 @@ function Footer() {
                 offers more than
               </p>
 
-              <div className="mt-14 flex items-center gap-6">
-                <img src={iconTwitter} alt="twitter" className="h-5 w-5 opacity-80" />
-                <img src={iconFacebook} alt="facebook" className="h-5 w-5 opacity-80" />
-                <img src={iconTiktok} alt="tiktok" className="h-5 w-5 opacity-80" />
-                <img src={iconInstagram} alt="instagram" className="h-5 w-5 opacity-80" />
+              <div className="mt-14 flex items-center gap-6 [&>img]:h-5 [&>img]:w-5 [&>img]:opacity-80">
+                {socials.map(({ icon, alt }) => (
+                  <img key={alt} src={icon} alt={alt} />
+                ))}
               </div>
             </div>
 
