@@ -7,8 +7,10 @@ import HeroBanner from './sections/HeroBanner';
 import FeatureGrid from './sections/FeatureGrid';
 import CategoryStrip from './sections/CategoryStrip';
 import ProductSection from './sections/ProductSection';
-import PromoTiles from './sections/PromoTiles';
+
 import BigSaleBanner from './sections/BigSaleBanner';
+import CTABanner from './sections/CTABanner';
+import PromoTilesSection from './sections/PromoTilesSection';
 
 export default function HomePage() {
   return (
@@ -28,12 +30,12 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      <Section>
-        <Container>
-          <PromoTiles />
-        </Container>
-      </Section>
-
+      <FullBleed>
+        <PromoTilesSection />
+      </FullBleed>
+      <FullBleed>
+        <CTABanner />
+      </FullBleed>
       <FullBleed className="bg-[#121212]">
         <BigSaleBanner />
       </FullBleed>
