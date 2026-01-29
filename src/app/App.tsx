@@ -3,7 +3,7 @@
 import { Routes, Route } from 'react-router-dom';
 import HomePage from '../pages/Home/index.tsx';
 import ProductDetailPage from '../pages/Products/ProductDetailPage';
-import ProductListPage from '../pages/Products/ProductListPage.tsx';
+import ProductListPage from '../pages/Products/StorePage.tsx';
 import RootLayout from '../components/layout/RootLayout.tsx';
 import NotFoundPage from '../pages/NotFound/index.tsx';
 

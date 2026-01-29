@@ -19,8 +19,8 @@ function CategoryStrip() {
 
   return (
     <section aria-labelledby="browse-category">
-      <div>
-        <h2 id="browse-category" className="text-6 mb-8 font-medium">
+      <div className="py-20">
+        <h2 id="browse-category" className="text-8 mb-8 font-medium">
           Browse By Category
         </h2>
 

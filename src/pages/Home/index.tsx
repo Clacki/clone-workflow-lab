@@ -7,8 +7,6 @@ import HeroBanner from './sections/HeroBanner';
 import FeatureGrid from './sections/FeatureGrid';
 import CategoryStrip from './sections/CategoryStrip';
 import ProductSection from './sections/ProductSection';
-
-import BigSaleBanner from './sections/BigSaleBanner';
 import CTABanner from './sections/CTABanner';
 import PromoTilesSection from './sections/PromoTilesSection';
 
@@ -23,9 +21,14 @@ export default function HomePage() {
         <FeatureGrid />
       </FullBleed>
 
-      <Section>
+      <FullBleed className="bg-[#FAFAFA]">
         <Container>
           <CategoryStrip />
+        </Container>
+      </FullBleed>
+
+      <Section>
+        <Container>
           <ProductSection />
         </Container>
       </Section>
@@ -33,11 +36,9 @@ export default function HomePage() {
       <FullBleed>
         <PromoTilesSection />
       </FullBleed>
+
       <FullBleed>
         <CTABanner />
-      </FullBleed>
-      <FullBleed className="bg-[#121212]">
-        <BigSaleBanner />
       </FullBleed>
     </>
   );
