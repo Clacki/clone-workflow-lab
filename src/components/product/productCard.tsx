@@ -1,31 +1,35 @@
-import { Link } from 'react-router-dom';
-import type { Product } from '../../data/items';
+/** @format */
+import { HeartIcon as HeartOutline } from '@heroicons/react/24/outline';
+import { HeartIcon as HeartSolid } from '@heroicons/react/24/solid';
 
-type Props = {
-  product: Product;
-};
-
-function ProductCard({ product }: Props) {
+export default function ProductCard({ id, thumbnail, title, price, isLiked, onToggleLike }) {
   return (
-    <li className="rounded-xl border p-4">
-      <Link to={`/products/${product.id}`} className="block">
-        <div className="aspect-square w-full overflow-hidden rounded-lg bg-gray-100">
-          {product.image ? (
-            <img src={product.image} alt={product.name} className="h-full w-full object-cover" />
-          ) : (
-            <div className="flex h-full w-full items-center justify-center text-sm text-gray-500">
-              No Image
-            </div>
-          )}
-        </div>
+    <article className="relative flex h-108 w-67 min-w-50 flex-col gap-4 rounded-[9px] bg-[#f6f6f6] px-4 py-6">
+      <button
+        type="button"
+        onClick={() => onToggleLike(id)}
+        className="absolute top-4 right-4"
+        aria-label={isLiked ? 'Remove from wishlist' : 'Add to wishlist'}
+      >
+        {isLiked ? (
+          <HeartSolid className="h-6 w-6 text-[#ff0000]" aria-hidden="true" />
+        ) : (
+          <HeartOutline className="h-6 w-6 text-[#909090]" aria-hidden="true" />
+        )}
+      </button>
+      <div className="flex flex-1 items-center justify-center">
+        <img src={thumbnail} alt={title} className="max-h-40 w-auto object-contain" />
+      </div>
 
-        <div className="mt-3">
-          <p className="text-base font-semibold">{product.name}</p>
-          <p className="mt-1 text-sm text-gray-600">{product.price.toLocaleString()}원</p>
-        </div>
-      </Link>
-    </li>
+      <h3 className="line-clamp-2 min-h-10 text-center text-sm font-medium">{title}</h3>
+
+      <p className="text-center text-lg font-bold">${price}</p>
+      <button
+        type="button"
+        className="mx-auto mt-auto flex h-12 w-47 items-center justify-center gap-2 rounded-lg bg-black px-16 py-3 text-sm text-white"
+      >
+        Buy Now
+      </button>
+    </article>
   );
 }
-
-export default ProductCard;

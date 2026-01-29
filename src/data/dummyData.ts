@@ -14,8 +14,6 @@ export const UI_CATEGORIES = [
   { key: 'shoes', label: 'Shoes', slugs: ['mens-shoes', 'womens-shoes'] },
 ];
 
-const LIMIT = 8;
-
 async function fetchJson(url, signal) {
   const res = await fetch(url, { signal });
   if (!res.ok) throw new Error(`Request failed: ${res.status}`);
@@ -29,23 +27,27 @@ function uniqById(products) {
 export function getUiCategory(key) {
   return UI_CATEGORIES.find((c) => c.key === key) ?? UI_CATEGORIES[0];
 }
-
-export async function fetchProductsByUiCategory(key, signal) {
+export async function fetchProductsByUiCategory(
+  key: string,
+  signal?: AbortSignal,
+  limit: number = 8,
+) {
   const cat = getUiCategory(key);
 
   if (cat.key === 'all') {
-    const data = await fetchJson(`https://dummyjson.com/products?limit=${LIMIT}`, signal);
-    return (data.products ?? []).slice(0, LIMIT);
+    const data = await fetchJson(`https://dummyjson.com/products?limit=${limit}`, signal);
+    return data.products ?? [];
   }
 
   const results = await Promise.all(
     cat.slugs.map(async (slug) => {
       const data = await fetchJson(
-        `https://dummyjson.com/products/category/${slug}?limit=${LIMIT}`,
+        `https://dummyjson.com/products/category/${slug}?limit=${limit}`,
         signal,
       );
       return data.products ?? [];
     }),
   );
-  return uniqById(results.flat()).slice(0, LIMIT);
+
+  return uniqById(results.flat()).slice(0, limit);
 }

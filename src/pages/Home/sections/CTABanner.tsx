@@ -6,7 +6,7 @@ function CTABanner() {
       className="relative h-[448px] w-full overflow-hidden bg-cover bg-center"
       style={{ backgroundImage: `url(${bannerImg})` }}
     >
-      <div className="absolute inset-0 bg-black/40" /> {/* 가독성 오버레이 */}
+      <div className="absolute inset-0 bg-black/40" />
       <div className="relative flex h-full flex-col items-center justify-center text-white">
         <h2 className="text-5xl font-extralight">
           Big Summer <span className="font-semibold">Sale</span>
