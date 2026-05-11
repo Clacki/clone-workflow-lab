@@ -1,7 +1,22 @@
 /** @format */
 import ProductCard from '@/components/product/ProductCard';
+import type { Product } from '@/types/product';
 
-export default function ProductGrid({ products, loading, error, likedSet, onToggleLike }) {
+type ProductGridProps = {
+  products: Product[];
+  loading: boolean;
+  error: string;
+  likedSet: Set<number>;
+  onToggleLike: (id: number) => void;
+};
+
+export default function ProductGrid({
+  products,
+  loading,
+  error,
+  likedSet,
+  onToggleLike,
+}: ProductGridProps) {
   if (loading) return <p className="py-6 text-gray-500">Loading...</p>;
   if (error) return <p className="py-6 text-red-500">{error}</p>;
 

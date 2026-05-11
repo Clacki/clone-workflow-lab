@@ -1,14 +1,23 @@
 /** @format */
 import { Link } from 'react-router-dom';
 
+export type PromoTileProps = {
+  title: string;
+  imgSrc: string;
+  href?: string;
+  bgClass?: string;
+  textClass?: string;
+  buttonVariant?: 'light' | 'dark';
+};
+
 export default function PromoTile({
   title,
   imgSrc,
   href = '#',
   bgClass = 'bg-white',
   textClass = 'text-black',
-  buttonVariant = 'light', // 'light' | 'dark'
-}) {
+  buttonVariant = 'light',
+}: PromoTileProps) {
   const btnClass =
     buttonVariant === 'dark'
       ? 'border border-white/40 text-white'

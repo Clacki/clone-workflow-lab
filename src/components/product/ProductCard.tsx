@@ -2,7 +2,23 @@
 import { HeartIcon as HeartOutline } from '@heroicons/react/24/outline';
 import { HeartIcon as HeartSolid } from '@heroicons/react/24/solid';
 
-export default function ProductCard({ id, thumbnail, title, price, isLiked, onToggleLike }) {
+type ProductCardProps = {
+  id: number;
+  thumbnail: string;
+  title: string;
+  price: number;
+  isLiked: boolean;
+  onToggleLike: (id: number) => void;
+};
+
+export default function ProductCard({
+  id,
+  thumbnail,
+  title,
+  price,
+  isLiked,
+  onToggleLike,
+}: ProductCardProps) {
   return (
     <article className="relative flex h-108 w-67 min-w-50 flex-col gap-4 rounded-[9px] bg-[#f6f6f6] px-4 py-6">
       <button

@@ -3,13 +3,14 @@ import { useEffect, useState } from 'react';
 import { UI_CATEGORIES, fetchProductsByUiCategory } from '@/data/dummyData';
 import CategoryTabs from '@/components/product/CategoryTabs';
 import ProductGrid from '@/components/product/ProductGrid';
+import type { Product } from '@/types/product';
 
 export default function ProductSection() {
   const [active, setActive] = useState('all');
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [liked, setLiked] = useState(() => new Set());
+  const [liked, setLiked] = useState<Set<number>>(() => new Set());
 
   useEffect(() => {
     setLoading(true);
@@ -23,7 +24,7 @@ export default function ProductSection() {
       .finally(() => setLoading(false));
   }, [active]);
 
-  const toggleLike = (id) =>
+  const toggleLike = (id: number) =>
     setLiked((prev) => {
       const next = new Set(prev);
       next.has(id) ? next.delete(id) : next.add(id);
