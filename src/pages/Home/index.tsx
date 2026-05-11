@@ -1,29 +1,45 @@
-/** @format */
+// src/pages/Home/HomePage.tsx
+import FullBleed from '@/components/common/FullBleed';
+import Container from '@/components/common/Container';
+import Section from '@/components/common/Section';
 
-import { Link } from 'react-router-dom';
-import { items } from '../../data/items';
-import ProductCard from '../../components/product/productCard';
+import HeroBanner from './sections/HeroBanner';
+import FeatureGrid from './sections/FeatureGrid';
+import CategoryStrip from './sections/CategoryStrip';
+import ProductSection from './sections/ProductSection';
+import CTABanner from './sections/CTABanner';
+import PromoTilesSection from './sections/PromoTilesSection';
 
-function HomePage() {
-  const featured = items.slice(0, 4);
+export default function HomePage() {
   return (
-    <div className="mx-auto w-full max-w-5xl px-4 py-8">
-      <h1 className="text-2xl font-bold">Home</h1>
-      <Link to="/products">전체 상품 보러가기</Link>
+    <>
+      <FullBleed className="bg-[#211C24]">
+        <HeroBanner />
+      </FullBleed>
 
-      <section className="mt-8">
-        <div className="mb-4 flex items-end justify-between">
-          <h2 className="text-xl font-semibold">추천 상품</h2>
-        </div>
+      <FullBleed>
+        <FeatureGrid />
+      </FullBleed>
 
-        <ul className="grid grid-cols-2 gap-4 md:grid-cols-4">
-          {featured.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </ul>
-      </section>
-    </div>
+      <FullBleed className="bg-[#FAFAFA]">
+        <Container>
+          <CategoryStrip />
+        </Container>
+      </FullBleed>
+
+      <Section>
+        <Container>
+          <ProductSection />
+        </Container>
+      </Section>
+
+      <FullBleed>
+        <PromoTilesSection />
+      </FullBleed>
+
+      <FullBleed>
+        <CTABanner />
+      </FullBleed>
+    </>
   );
 }
-
-export default HomePage;
