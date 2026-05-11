@@ -1,6 +1,6 @@
 import iconCart from '@/assets/icons/Cart.png';
 import iconHeart from '@/assets/icons/Favorites.svg';
-import iconSearch from '@/assets/icons/search.png';
+import iconSearch from '@/assets/icons/Search-icon.png';
 import logo from '@/assets/images/common/Logo-cyber.svg';
 import { Link } from 'react-router-dom';
 
